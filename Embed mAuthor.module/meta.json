@@ -1,0 +1,11 @@
+{
+  "global" : false,
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 93021830920,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../scalable.js",
+    "name" : "scalable.js"
+  } ],
+  "is_available_for_new_content" : true
+}

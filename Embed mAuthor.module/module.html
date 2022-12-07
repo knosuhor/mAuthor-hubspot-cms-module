@@ -1,0 +1,80 @@
+{% require_css %}
+ <style>
+
+        .container{{name}} {
+            max-width: 100%;
+            overflow: hidden;
+            padding: 0px;
+            {{ module.style.border.border_field.css }};
+            {% if module.style.border.borderradius >= 0 %}
+            border-radius: {{ module.style.border.borderradius ~ "px" }};
+            {% endif %}
+            {% if module.width >= 0 %}
+            width: {{ module.width ~ "%" }};
+            {% endif %}
+            margin: {{ module.style.align }};
+            {% !if module.style.box_shadow.color_field.color %}
+            box-shadow: {{ module.style.box_shadow.offset_x ~ "px" }} {{ module.style.box_shadow.offset_y ~ "px" }} {{ module.style.box_shadow.blur ~ "px" }} rgba({{ module.style.box_shadow.color_field.color|convert_rgb }},{{ module.style.box_shadow.color_field.opacity / 100 }});
+            {% endif %}
+        }
+   
+        .{{name}} {
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;  
+        }
+
+         #{{name}} iframe.resizable-lesson {
+            max-width: none;
+            border: none;
+            box-sizing: border-box;
+            overflow: hidden; 
+            width: {{ module.device }};
+           
+        }
+
+    </style>
+{% end_require_css %}
+            <div class="container{{name}}" id="testframe">
+                <div class="{{name}}" id="{{name}}">
+                    <iframe class="resizable-lesson" scrolling="no" style="overflow:hidden" src="{{ module.text_field }}">
+                    </iframe>
+                </div>
+                
+            </div>
+   {% require_js 'footer' %}
+            <script>
+                    window.addEventListener('message', onMessageReceived, false);
+
+                    function onMessageReceived (event) {
+                    var data = event.data, size, width, height;
+                    if (data.indexOf('RESIZE:') === 0) {
+                      size = data.substring('RESIZE:'.length).split(';');
+                      width = parseInt(size[0]);
+                      height = parseInt(size[1]);
+                        if (document.getElementById("{{name}}").getElementsByClassName("resizable-lesson")[0].contentWindow === event.source) {
+
+                         document.getElementById("{{name}}").getElementsByClassName("resizable-lesson")[0].style.width = width + 'px';
+                         document.getElementById("{{name}}").getElementsByClassName("resizable-lesson")[0].style.height = height + 'px';
+                         document.getElementById("{{name}}").style.paddingTop = height / width * 100 + '%';}
+
+        }
+    }
+    
+    </script>      
+    <script>
+
+        var element = document.querySelector('.{{name}}');
+
+        var scalable = new Scalable(element, {
+            align: 'center',
+            verticalAlign: 'center'
+        });
+
+
+        $(function () {
+            $("#{{name}}").resizable();
+        });
+    </script>
+    {% end_require_js %}

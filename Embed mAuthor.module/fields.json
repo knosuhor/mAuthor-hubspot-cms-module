@@ -1,0 +1,225 @@
+[ {
+  "id" : "d3898dd0-a753-fba6-4369-aeeee1966239",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c325349f-0c39-319e-0f4d-f3cf24779b04",
+    "name" : "align",
+    "display_width" : null,
+    "label" : "Align",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "auto", "Center" ], [ "0 auto 0 0", "Left" ], [ "0 0 0 auto", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "type" : "choice",
+    "default" : ""
+  }, {
+    "id" : "d78e6944-628a-fb7a-48bd-b2f5405327eb",
+    "name" : "border",
+    "display_width" : null,
+    "label" : "Border",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "6fd37046-71c8-8ae3-59eb-aa2584262ee0",
+      "name" : "borderradius",
+      "display_width" : null,
+      "label" : "Border radius",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "default" : 15
+    }, {
+      "id" : "30d9df0c-24dd-6b59-e6e3-a21d9704ace2",
+      "name" : "border_field",
+      "display_width" : null,
+      "label" : "Border",
+      "required" : false,
+      "locked" : false,
+      "allow_custom_border_sides" : false,
+      "type" : "border",
+      "default" : {
+        "top" : {
+          "style" : "none"
+        },
+        "bottom" : {
+          "style" : "none"
+        },
+        "left" : {
+          "style" : "none"
+        },
+        "right" : {
+          "style" : "none"
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "borderradius" : 15,
+      "border_field" : {
+        "top" : {
+          "style" : "none"
+        },
+        "bottom" : {
+          "style" : "none"
+        },
+        "left" : {
+          "style" : "none"
+        },
+        "right" : {
+          "style" : "none"
+        }
+      }
+    }
+  }, {
+    "id" : "21967e70-7674-d237-197c-9dea90419c71",
+    "name" : "box_shadow",
+    "display_width" : null,
+    "label" : "Box shadow",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "04a0750c-dd47-4c91-087e-094b03fe6cc5",
+      "name" : "offset_x",
+      "display_width" : null,
+      "label" : "Offset x",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number"
+    }, {
+      "id" : "91d8f2ff-f4bb-0235-4dc0-5291da80b7c9",
+      "name" : "offset_y",
+      "display_width" : null,
+      "label" : "Offset y",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number"
+    }, {
+      "id" : "68acfee1-5590-897c-34fc-4f5d11f2d606",
+      "name" : "blur",
+      "display_width" : null,
+      "label" : "Blur",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number"
+    }, {
+      "id" : "8cbff0a9-7107-60fa-e732-dc5d08eec217",
+      "name" : "color_field",
+      "display_width" : null,
+      "label" : "Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : null,
+        "controlling_value_regex" : null,
+        "property" : null,
+        "operator" : "NOT_EMPTY",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "color_field" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "align" : "",
+    "border" : {
+      "borderradius" : 15,
+      "border_field" : {
+        "top" : {
+          "style" : "none"
+        },
+        "bottom" : {
+          "style" : "none"
+        },
+        "left" : {
+          "style" : "none"
+        },
+        "right" : {
+          "style" : "none"
+        }
+      }
+    },
+    "box_shadow" : {
+      "color_field" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }
+  }
+}, {
+  "id" : "265c75f8-204e-33b2-465e-b03894713403",
+  "name" : "text_field",
+  "display_width" : null,
+  "label" : "mAuthor link",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "https://www.mauthor.com/embed/5843571337986048",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://www.mauthor.com/embed/5843571337986048"
+}, {
+  "id" : "dcdecb9e-859b-56b7-b719-54d958f9c60b",
+  "name" : "width",
+  "display_width" : null,
+  "label" : "Width",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 1,
+  "max" : 100,
+  "step" : 1,
+  "suffix" : "%",
+  "type" : "number",
+  "default" : 100
+}, {
+  "id" : "7ffbf6d1-3aa9-f594-eaff-7ab97470e157",
+  "name" : "device",
+  "display_width" : null,
+  "label" : "Device",
+  "inline_help_text" : "Force device view (only lessons supporting mobile layout).",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ " ", "Default" ], [ "1140px", "Desktop" ], [ "300px", "Mobile" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "type" : "choice"
+} ]
